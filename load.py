@@ -1,6 +1,12 @@
 import pandas as pd
 import sqlalchemy as sal
+from secret import connection 
 
-df = pd.read_csv('./data/netflix_titles.csv')
+def main():
+    df = pd.read_csv('./data/netflix_titles.csv')
+    engine = sal.create_engine(connection.get_connection())
+    conn = engine.connect()
+    df.to_sql('netflix_raw', con=conn, index=False, if_exists='replace')
 
-print(df.head())
+if __name__ == '__main__':
+    main()

@@ -176,3 +176,4 @@ cython_debug/
 #the connection to the database URL
 secret/
 secret/*
+*.deb
