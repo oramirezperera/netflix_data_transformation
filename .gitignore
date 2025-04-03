@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+#the connection to the database URL
+secret/
+secret/*
+*.deb
